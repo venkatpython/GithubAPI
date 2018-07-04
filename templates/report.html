@@ -1,0 +1,109 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+{% block extrahead %}
+ <!--Add Css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+    <!--Add Js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Start: Data Tables-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/fixedcolumns/3.2.6/js/dataTables.fixedColumns.min.js"></script>
+<!--End: Data Tables-->
+    <style type="text/css">
+     th, td { white-space: nowrap; text-align: center;}
+    div.dataTables_wrapper {
+        width: 800px;
+        margin: 0 auto;
+    }
+    </style>
+    <script type="text/javascript">
+       $(document).ready(function() {
+           var table = $('#git_users').DataTable( {
+            scrollY:        "350px",
+            scrollX:        true,
+            scrollCollapse: true,
+            paging:         false,
+            fixedColumns:   {
+                leftColumns: 1,
+            }
+        } );
+        var overall = $('#overall').DataTable({
+        });
+} );
+    </script>
+{% endblock %}
+
+{% block content %}
+   <div class="container">
+
+        {%  if overall %}
+       <table id="overall", class="stripe row-border order-column">
+    <thead>
+      <tr>
+       <th>No of users added</th>
+       <th>No of API calls made</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+       <td>{{ users_added }} &nbsp; <a href="/admin/core/gituserinfo/report/user_report/{{report_period}}/">Click here for Detailed User Report</a></td>
+        <td>{{ api_count }}</td>
+      </tr>
+    </tbody>
+       </table>
+        {% endif %}
+        {% if user_report %}
+           <table id="git_users", class="stripe row-border order-column">
+            <thead>
+      <tr>
+        <th>No of users added</th>
+        <th>No of API calls made</th>
+        <th>Avathar URL</th>
+        <th>Gravatar ID</th>
+        <th>Git URL</th>
+          <th>HTML URL</th>
+          <th>Followers URL</th>
+          <th>Following URL</th>
+          <th>Gists URL</th>
+          <th>Starred URL</th>
+          <th>Subscription URL</th>
+          <th>Organizations URL</th>
+          <th>Repos URL</th>
+          <th>Events URL</th>
+          <th>Received Events URL</th>
+          <th>Site Admin</th>
+          <th>Score</th>
+          <th>Created</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+      <tr>
+        <td>{{ user.login }}</td>
+        <td>{{ user.node_id }}</td>
+        <td>{{ user.avatar_url }}</td>
+        <td>{{ user.gravatar_id }}</td>
+          <td>{{ user.git_url }}</td>
+          <td>{{ user.html_url }}</td>
+          <th>{{ user.followers_url }}</th>
+          <th>{{ user.following_url }}</th>
+          <th>{{ user.gists_url }}</th>
+          <th>{{ user.starred_url }}</th>
+          <th>{{ user.subscriptions_url }}</th>
+          <th>{{ user.organizations_url }}</th>
+          <th>{{ user.repos_url }}</th>
+          <th>{{ user.events_url }}</th>
+          <th>{{ user.received_events_url }}</th>
+          <th>{{ user.score }}</th>
+          <th>{{ user.is_site_admin }}</th>
+          <th>{{ user.created }}</th>
+      </tr>
+    {% endfor %}
+    </tbody>
+           </table>
+        {% endif %}
+</div>
+{% endblock %}

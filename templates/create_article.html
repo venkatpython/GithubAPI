@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block title %}
+<title>Article Create Page</title>
+{% endblock %}
+
+{% block main_content %}
+<form method="post" class="centered" action="/create/article/">{% csrf_token %}
+    <div class="article_create">
+        {{ form.as_p }}
+    </div>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
