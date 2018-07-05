@@ -37,9 +37,9 @@ Follow the instructions for setup the project:
 3. Install all required python packages with the below command.
      - pip install -r requirements.txt
 
-3. Create DB in mysql with the name "restdb",
-    log into mysql client and create database with the below command
-    mysql> create database restdb;
+3. Create DB in mysql with the name "github",
+    - log into mysql client and create database with the below command
+    - mysql> create database github;
 
 4. Run Django Migrations
     - python manage.py migrate.
