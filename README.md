@@ -35,17 +35,17 @@ Follow the instructions for setup the project:
     - <env_name>/bin/activate
 
 3. Install all required python packages with the below command.
-    pip install -r requirements.txt
+     - pip install -r requirements.txt
 
 3. Create DB in mysql with the name "restdb",
     log into mysql client and create database with the below command
     mysql> create database restdb;
 
 4. Run Django Migrations
-    python manage.py migrate
+    - python manage.py migrate
 
 5. Start Server and access the application at localhost:8000
-    python manage.py runserver
+    - python manage.py runserver
 
 Available Feature:
 ------------------
