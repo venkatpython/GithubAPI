@@ -28,7 +28,7 @@ Follow the instructions for setup the project:
 1. Clone the project repository from Git::
 
     $ git clone https://github.com/venkatpython/GithubAPI.git
-    # Make Sure you have the access to the repo
+    ##### Make Sure you have the access to the repo
 
 2. Create and active local virtual env with below command.
     virtualenv '<env_name>'
