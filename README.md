@@ -42,9 +42,13 @@ Follow the instructions for setup the project:
     mysql> create database restdb;
 
 4. Run Django Migrations
+    - python manage.py migrate.
+
+5. If any changes made on models in future run makemigrations and then migrate to aplly new schema to the DB
+    - python manage.py makemigrations <app_label>
     - python manage.py migrate
 
-5. Start Server and access the application at localhost:8000
+6. Start Server and access the application at localhost:8000
     - python manage.py runserver
 
 Available Feature:
