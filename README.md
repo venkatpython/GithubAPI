@@ -61,4 +61,5 @@ Issues/Tasks/Limitations
 1. Use oAuth Integration for another GitHub API services like get report details etc.,
 2. Django user registration
 3. Incorporate design.(css and theme integration)
-
+4. Maintain git branching model for code maintenance.
+https://nvie.com/posts/a-successful-git-branching-model/?
