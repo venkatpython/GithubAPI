@@ -31,8 +31,8 @@ Follow the instructions for setup the project:
     ##### Make Sure you have the access to the repo
 
 2. Create and active local virtual env with below command.
-    virtualenv '<env_name>'
-    <env_name>/bin/activate
+    - virtualenv '<env_name>'
+    - <env_name>/bin/activate
 
 3. Install all required python packages with the below command.
     pip install -r requirements.txt
