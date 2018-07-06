@@ -62,7 +62,7 @@ Available Feature:
 
 Issues/Tasks/Limitations
 -------------------
-1. Use oAuth Integration for another GitHub API services like get report details etc.,
+1. Use oAuth Integration for other GitHub API services like get repo details etc.,
 2. Django user registration
 3. Incorporate design.(css and theme integration)
 4. Maintain git branching model for code maintenance.
